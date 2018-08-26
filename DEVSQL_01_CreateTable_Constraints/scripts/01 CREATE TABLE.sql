@@ -1,0 +1,62 @@
+USE [master] 
+GO
+
+CREATE DATABASE TestTSQL
+GO
+
+USE TestTSQL
+GO
+
+CREATE TABLE [dbo].[Employee]
+(
+		EmpID			VARCHAR(10)
+	,	EmpFirstName	VARCHAR(100)
+	,	EmpLastName		VARCHAR(100)
+	,	EmpJobPosition	VARCHAR(100)
+)
+GO
+
+CREATE TABLE [dbo].[Employee2]
+(
+		EmpID			VARCHAR(10)		NOT NULL
+	,	EmpFirstName	VARCHAR(100)	NOT NULL 
+	,	EmpLastName		VARCHAR(100)	NOT NULL 
+	,	EmpJobPosition	VARCHAR(100)	NOT NULL 
+)
+GO
+
+CREATE TABLE [dbo].[Employee3]
+(
+		EmpKey			INT				NOT NULL	IDENTITY(1,1) PRIMARY KEY
+	,	EmpID			VARCHAR(10)		NOT NULL	UNIQUE
+	,	EmpFirstName	VARCHAR(100)	NOT NULL 
+	,	EmpLastName		VARCHAR(100)	NOT NULL 
+	,	EmpJobPosition	VARCHAR(100)	NOT NULL	DEFAULT 'NewEmployee'
+)
+GO
+
+CREATE TABLE [dbo].[Employee4]
+(
+		EmpKey			INT				NOT NULL	IDENTITY(1,1) PRIMARY KEY
+	,	EmpID			VARCHAR(10)		NOT NULL	UNIQUE
+	,	EmpFirstName	VARCHAR(100)	NOT NULL 
+	,	EmpLastName		VARCHAR(100)	NOT NULL 
+	,	EmpJobPosition	VARCHAR(100)	NOT NULL	DEFAULT 'NewEmployee'
+	,	BaseSalary		NUMERIC(10,2)	NOT NULL	DEFAULT 0
+	,	BonusRate		INT				NOT NULL	DEFAULT 0
+)
+GO
+
+CREATE TABLE [dbo].[Employee5]
+(
+		EmpKey			INT				NOT NULL	IDENTITY(1,1) PRIMARY KEY
+	,	EmpID			VARCHAR(10)		NOT NULL	UNIQUE
+	,	EmpFirstName	VARCHAR(100)	NOT NULL 
+	,	EmpLastName		VARCHAR(100)	NOT NULL 
+	,	EmpJobPosition	VARCHAR(100)	NOT NULL	DEFAULT 'NewEmployee'
+	,	BaseSalary		NUMERIC(10,2)	NOT NULL	DEFAULT 0
+	,	BonusRate		INT				NOT NULL	DEFAULT 0
+	,	CHECK (BaseSalary >= 0)
+	,	CHECK (BonusRate BETWEEN 0 AND 100)
+)
+GO

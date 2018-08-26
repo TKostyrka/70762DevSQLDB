@@ -1,0 +1,12 @@
+zajêcia 03:
+
+- (zajêcia 00)
+	- instalacja GIT
+	- projekt VS SQL
+- (zajêcia 03) 
+	- slajdy wprowadzaj¹ce do query execution plan, DBCC
+	- sprawdziæ kod
+- (zajêcia 04)
+	-  
+- (zajêcia 05)
+	- 
