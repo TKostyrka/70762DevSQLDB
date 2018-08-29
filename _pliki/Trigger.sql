@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 --	The most common types of triggers:
 
---		(DML triggers)		-	operation such as an INSERT, UPDATE or DELETE statement execution
---		(DDL triggers)		-	triggers that fire when someone changes something in SQL Server, a setting or bject on the server
---		(login triggers)	-	someone logging into a server.
+--	(DML triggers)		-	operation such as an INSERT, UPDATE or DELETE statement execution
+--	(DDL triggers)		-	triggers that fire when someone changes something in SQL Server, a setting or bject on the server
+--	(login triggers)	-	someone logging into a server.
 
 ---------------------------------------------------------------------------------------------------
 --	Complex data integrity CHECK 
@@ -30,3 +30,15 @@
 --	INSTEAD OF		-	These triggers perform instead of the DML operation, 
 --						so if you want the operation to occur, you need repeat the DML in the code.
 
+---------------------------------------------------------------------------------------------------
+--	DDL triggers 
+--	Used to react to DDL operations at the server or database level. For
+--	example, you can capture the DDL of every CREATE TABLE and ALTER TABLE statement
+--	and log the results in a table, or even stop them from occurring.
+
+---------------------------------------------------------------------------------------------------
+--	Logon triggers 
+--	Used to react to someone logging into the server. For example, you
+--	could state that login LOGIN1 (also referred to as a server principal) could not log in
+--	from 8PM – 7AM. These triggers just stop the login action, so if the user is already connected
+--	during this time period, it does not end their connection.
