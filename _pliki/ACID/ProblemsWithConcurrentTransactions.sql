@@ -1,0 +1,41 @@
+--	Dirty reads (odczyt wiersza przed COMMIT'em, a potem ROLLBACK i wiersz znika)
+-----------------------------------------------------------------------------------------------------------
+--	A dirty read, also known as an uncommitted dependency, can occur when an uncommitted
+--	transaction updates a row at the same time that another transaction reads that row with its
+--	new value. Because the writing transaction is not committed, the row could revert to its
+--	original state and consequently the reading transaction has data that is not valid.
+
+--	SQL Server does not allow dirty reads by default. However, by controlling the isolation
+--	level of the reading transaction, you can specify whether it reads both uncommitted and
+--	committed data or committed data only.
+
+--	Non-repeatable reads (2 odczyty podczas transakcji, pomiêdzy nimi zmiana, wartoœci odczytów ró¿ne)
+-----------------------------------------------------------------------------------------------------------
+--	A non-repeatable read can occur when data is read more than once within the same
+--	transaction while another transaction updates the same data between read operations. Let’s
+--	say that a transaction reads the current in-stock quantity of a widget from an inventory table
+--	as 5 and continues to perform other operations, which leaves the transaction in an
+--	uncommitted state. During this time, another transaction changes the in-stock quantity of the
+--	widget to 3. Then the first transaction reads the in-stock quantity of the widget again, which
+--	is now inconsistent with the initial value read.
+
+--	Phantom reads (2 odczyty podczas transakcji z warunkiem WHERE, pomiêdzy nimi np. insert, drugi odczyt zwraca wiersz, którego nie zwróci³ pierwszy)
+-----------------------------------------------------------------------------------------------------------
+--	Closely related to a non-repeatable read is a phantom read. This potential problem can
+--	occur when one transaction reads the same data multiple times while another transaction
+--	inserts or updates a row between read operations. As an example, consider a transaction in
+--	which a SELECT statement reads rows having in-stock quantities less than 5 from the
+--	inventory table and remains uncommitted while a second transaction inserts a row with an
+--	in-stock quantity of 1. When the first transaction reads the inventory table again, the number
+--	of rows increases by one. In this case, the additional row is considered to be a phantom
+--	row. This situation occurs only when the query uses a predicate.
+
+--	Lost updates
+-----------------------------------------------------------------------------------------------------------
+--	Another potential problem can occur when two processes read the same row and then
+--	update that data with different values. This might happen if a transaction first reads a value
+--	into a variable and then uses the variable in an update statement in a later step. When this
+--	update executes, another transaction updates the same data. Whichever of these transactions
+--	is committed first becomes a lost update because it was replaced by the update in the other
+--	transaction. You cannot use isolation levels to change this behavior, but you can write an
+--	application that specifically allows lost updates.
