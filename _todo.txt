@@ -4,8 +4,8 @@
 04	ok
 05
 06	ok
-07
-08
+07	- obrobiæ pptx
+08	- obrobiæ przyk³ady do isolation levels
 09
 10
 11
