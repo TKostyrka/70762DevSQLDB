@@ -1,7 +1,7 @@
 # 70762DevSQLDB
 70-762 Developing SQL Databases (training materials)
 
-## Materiał na 25/11/2018
+## Materiał na 25/11/2018 (Kolokwium #1 - MTA)
 
 * CREATE/USE DATABASE
 * SELECT/FROM/WHERE/GROUP BY/HAVING/ORDER BY
