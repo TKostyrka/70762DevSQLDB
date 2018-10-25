@@ -5,8 +5,8 @@
 05
 06	ok
 07	- obrobiæ pptx
-08	- obrobiæ przyk³ady do isolation levels
-09
+08	ok, dodaæ przyk³ady SQL
+09	ok, dodaæ przyk³ady SQL
 10
 11
 12
