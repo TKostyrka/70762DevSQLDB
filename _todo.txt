@@ -2,12 +2,12 @@
 02	ok
 03	ok
 04	ok
-05
+05	ok, dodaæ przyk³ady SQL
 06	ok
 07	ok
 08	ok, dodaæ przyk³ady SQL
 09	ok, dodaæ przyk³ady SQL
-10	- obrobiæ pptx do koñca, ogarn¹æ przyk³ady
+10	ok
 11	ok
 12	ok, dodaæ przyk³ady SQL
 13
