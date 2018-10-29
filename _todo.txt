@@ -4,7 +4,7 @@
 04	ok
 05
 06	ok
-07	- obrobiæ pptx
+07	ok
 08	ok, dodaæ przyk³ady SQL
 09	ok, dodaæ przyk³ady SQL
 10	- obrobiæ pptx do koñca, ogarn¹æ przyk³ady
