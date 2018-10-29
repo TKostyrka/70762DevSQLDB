@@ -27,7 +27,7 @@ GO
 	END
 
 	CREATE LOGIN [TestowyUserSQL] 
-	WITH PASSWORD		=	N'xxx', 
+	WITH PASSWORD		=	N'abc123!@#', 
 	DEFAULT_DATABASE	=	[master]
 
 	ALTER SERVER ROLE [sysadmin] 
