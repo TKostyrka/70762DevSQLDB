@@ -61,24 +61,24 @@ GO
 	ADD MASKED WITH (FUNCTION = 'default()');
 
 	ALTER TABLE [dbo].[DataMasking]
-	ALTER COLUMN [BirthDate]
-	ADD MASKED WITH (FUNCTION = 'default()');
-
-	ALTER TABLE [dbo].[DataMasking]
-	ALTER COLUMN [EmailAddress]
-	ADD MASKED WITH (FUNCTION = 'email()');
+	ALTER COLUMN [LastName]
+	ADD MASKED WITH (FUNCTION = 'partial(3,"_____",2)');
 
 	ALTER TABLE [dbo].[DataMasking]
 	ALTER COLUMN [PersonNumber]
 	ADD MASKED WITH (FUNCTION = 'partial(2,"*******",1)');
 
 	ALTER TABLE [dbo].[DataMasking]
-	ALTER COLUMN [LastName]
-	ADD MASKED WITH (FUNCTION = 'partial(3,"_____",2)');
-
-	ALTER TABLE [dbo].[DataMasking]
 	ALTER COLUMN [Status]
 	ADD MASKED WITH (FUNCTION = 'partial(0,"Unknown",0)');
+
+	ALTER TABLE [dbo].[DataMasking]
+	ALTER COLUMN [EmailAddress]
+	ADD MASKED WITH (FUNCTION = 'email()');
+
+	ALTER TABLE [dbo].[DataMasking]
+	ALTER COLUMN [BirthDate]
+	ADD MASKED WITH (FUNCTION = 'default()');
 
 	ALTER TABLE [dbo].[DataMasking]
 	ALTER COLUMN [CarCount]
@@ -105,7 +105,7 @@ GO
 	END
 
 	CREATE LOGIN [TestowyUserSQL] 
-	WITH PASSWORD		=	N'xxx', 
+	WITH PASSWORD		=	N'abc123!@#$', 
 	DEFAULT_DATABASE	=	[master]
 
 --	User
