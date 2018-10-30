@@ -11,6 +11,6 @@
 11	ok
 12	ok, dodaæ przyk³ady SQL
 13
-14
+14	ok
 15
-16	skoñczyæ pptx
+16	ok
