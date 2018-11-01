@@ -12,5 +12,5 @@
 12	ok, dodaæ przyk³ady SQL
 13	ok
 14	ok, dodaæ przyk³ady SQL
-15
+15	- ogarn¹æ porz¹dnie i dokoñczyæ
 16	ok
