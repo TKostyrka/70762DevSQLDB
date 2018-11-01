@@ -10,7 +10,7 @@
 10	ok
 11	ok
 12	ok, dodaæ przyk³ady SQL
-13
+13	ok
 14	ok, dodaæ przyk³ady SQL
 15
 16	ok
