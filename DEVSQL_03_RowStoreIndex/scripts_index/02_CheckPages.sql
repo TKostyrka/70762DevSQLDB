@@ -12,8 +12,8 @@ GO
 
 ---------------------------------------------
 
-	IF OBJECT_ID('dbo.test1') IS NOT NULL DROP TABLE dbo.test
-	IF OBJECT_ID('dbo.test2') IS NOT NULL DROP TABLE dbo.test
+	IF OBJECT_ID('dbo.test1') IS NOT NULL DROP TABLE dbo.test1
+	IF OBJECT_ID('dbo.test2') IS NOT NULL DROP TABLE dbo.test2
 
 	CREATE TABLE dbo.test1(
 		kol1 INT, 
