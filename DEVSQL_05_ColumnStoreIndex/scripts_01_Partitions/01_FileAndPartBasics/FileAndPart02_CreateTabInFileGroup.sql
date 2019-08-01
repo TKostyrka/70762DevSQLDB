@@ -23,11 +23,11 @@
 	,	[p].[rows]
 	,	[p].[data_compression_desc]
 	FROM
-		[sys].[schemas]				AS [s]
-	INNER JOIN [sys].[tables] AS [t] ON [t].[schema_id]		= [s].[schema_id]
-	INNER JOIN [sys].[indexes] AS [i] ON [i].[object_id] = [t].[object_id]
-	INNER JOIN [sys].[data_spaces] AS [d] ON [d].[data_space_id] = [i].[data_space_id]
-	INNER JOIN [sys].[partitions] AS [p] ON [p].[object_id] = [t].[object_id];
+				[sys].[schemas]				AS [s]
+	INNER JOIN	[sys].[tables]				AS [t] ON [t].[schema_id]		= [s].[schema_id]
+	INNER JOIN	[sys].[indexes]				AS [i] ON [i].[object_id]		= [t].[object_id]
+	INNER JOIN	[sys].[data_spaces]			AS [d] ON [d].[data_space_id]	= [i].[data_space_id]
+	INNER JOIN	[sys].[partitions]			AS [p] ON [p].[object_id]		= [t].[object_id];
 	GO
 
 --	CREATE Table ON [FastFG] Filegroup

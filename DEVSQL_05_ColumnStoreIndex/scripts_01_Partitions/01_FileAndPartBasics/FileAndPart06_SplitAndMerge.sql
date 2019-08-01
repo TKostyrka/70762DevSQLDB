@@ -18,14 +18,14 @@
 	,	[prv1].[value]	AS [value_FROM]
 	,	[prv2].[value]	AS [value_TO]
 	FROM
-		[sys].[partition_schemes]				AS [ps]
-	INNER JOIN [sys].[destination_data_spaces] AS [dds] ON [ps].[data_space_id] = [dds].[partition_scheme_id]
-	INNER JOIN [sys].[data_spaces]		AS [ds] ON [ds].[data_space_id] = [dds].[data_space_id]
-	INNER JOIN [sys].[partition_functions] AS [pf] ON [pf].[function_id] = [ps].[function_id]
-	LEFT JOIN [sys].[partition_range_values]	AS [prv1] ON [prv1].[function_id] = [pf].[function_id]
-															AND [dds].[destination_id] - 1 = [prv1].[boundary_id]
-	LEFT JOIN [sys].[partition_range_values]	AS [prv2] ON [prv2].[function_id] = [pf].[function_id]
-															AND [dds].[destination_id] = [prv2].[boundary_id]
+				[sys].[partition_schemes]			AS [ps]
+	INNER JOIN	[sys].[destination_data_spaces]		AS [dds]	ON [ps].[data_space_id] = [dds].[partition_scheme_id]
+	INNER JOIN	[sys].[data_spaces]					AS [ds]		ON [ds].[data_space_id] = [dds].[data_space_id]
+	INNER JOIN	[sys].[partition_functions]			AS [pf]		ON [pf].[function_id] = [ps].[function_id]
+	LEFT JOIN	[sys].[partition_range_values]		AS [prv1]	ON [prv1].[function_id] = [pf].[function_id]
+																AND [dds].[destination_id] - 1 = [prv1].[boundary_id]
+	LEFT JOIN	[sys].[partition_range_values]		AS [prv2]	ON [prv2].[function_id] = [pf].[function_id]
+																AND [dds].[destination_id] = [prv2].[boundary_id]
 	WHERE
 		1 = 1
 		AND [ps].[name] = 'PS_SplitMergeYR_OnFast';

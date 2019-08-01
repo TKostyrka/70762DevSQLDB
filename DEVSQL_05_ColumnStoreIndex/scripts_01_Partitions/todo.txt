@@ -1,5 +1,0 @@
-- sliding window
-- partition switching
-- TRUNCATE TABLE + WITH partitions
-- partitions + views
-- partitions + index

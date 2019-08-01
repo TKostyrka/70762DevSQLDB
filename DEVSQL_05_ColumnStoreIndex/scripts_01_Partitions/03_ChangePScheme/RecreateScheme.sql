@@ -1,5 +1,3 @@
-USE [SaxoWarehouse]
-GO
 
 --	step:A01: drop CCI
 --	step:A02: create CRI on [PRIMARY]
@@ -35,13 +33,11 @@ GO
 		[#IndexSQLCmds]
 	FROM
 		[sys].[partition_schemes]	 AS [ps]
-	INNER JOIN [sys].[indexes]		 AS [i] ON [ps].[data_space_id] = [i].[data_space_id]
-	INNER JOIN [sys].[index_columns] AS [ic] ON [ic].[index_id] = [i].[index_id]
-												AND [ic].[object_id] = [i].[object_id]
-	INNER JOIN [sys].[columns]		 AS [c] ON [ic].[object_id] = [c].[object_id]
-											   AND [ic].[column_id] = [c].[column_id]
-	INNER JOIN [sys].[tables]		 AS [t] ON [t].[object_id] = [i].[object_id]
-	INNER JOIN [sys].[schemas]		 AS [s] ON [s].[schema_id] = [t].[schema_id]
+	INNER JOIN [sys].[indexes]		 AS [i]		ON [ps].[data_space_id] = [i].[data_space_id]
+	INNER JOIN [sys].[index_columns] AS [ic]	ON [ic].[index_id]		= [i].[index_id]		AND [ic].[object_id] = [i].[object_id]
+	INNER JOIN [sys].[columns]		 AS [c]		ON [ic].[object_id]		= [c].[object_id]		AND [ic].[column_id] = [c].[column_id]
+	INNER JOIN [sys].[tables]		 AS [t]		ON [t].[object_id]		= [i].[object_id]
+	INNER JOIN [sys].[schemas]		 AS [s]		ON [s].[schema_id]		= [t].[schema_id]
 	WHERE
 		1 = 1
 		AND [ps].[name] IN ( 'PS_SCHEME_B' )
