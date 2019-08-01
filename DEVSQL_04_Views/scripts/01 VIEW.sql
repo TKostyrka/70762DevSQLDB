@@ -1,6 +1,12 @@
 	USE [ContosoRetailDW]
 	GO
 
+	DROP VIEW IF EXISTS dbo.View1
+	DROP VIEW IF EXISTS dbo.View2
+	DROP VIEW IF EXISTS dbo.View3
+	DROP VIEW IF EXISTS dbo.View4
+	GO
+
 	CREATE VIEW dbo.View1
 	AS
 	SELECT

@@ -1,5 +1,9 @@
 	USE [ContosoRetailDW]
 	GO
+
+	DROP VIEW IF EXISTS dbo.View5
+	DROP VIEW IF EXISTS dbo.View6
+	GO
 	
 	CREATE VIEW dbo.View5
 	WITH SCHEMABINDING
